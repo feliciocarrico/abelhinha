@@ -1,0 +1,119 @@
+/* Reset básico */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: #fff;
+}
+
+/* Cabeçalho */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0066cc;
+  color: #fff;
+  padding: 1rem 2rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+}
+
+.nav li {
+  margin-left: 1.5rem;
+}
+
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Seção destaque */
+.hero {
+  background: #e0f0ff;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  color: #0066cc;
+}
+
+/* Seções */
+.sobre,
+.servicos,
+.depoimentos {
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.sobre h2,
+.servicos h2,
+.depoimentos h2 {
+  color: #0066cc;
+  margin-bottom: 1rem;
+}
+
+/* Serviços */
+.servicos ul {
+  list-style: none;
+  padding: 0;
+}
+
+.servicos li {
+  margin: 0.5rem 0;
+}
+
+/* Depoimentos */
+.depoimentos blockquote {
+  border-left: 4px solid #0066cc;
+  padding-left: 1rem;
+  margin: 1rem auto;
+  width: 80%;
+  font-style: italic;
+}
+
+/* Rodapé */
+.footer {
+  background: #0066cc;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 2rem;
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .nav ul {
+    flex-direction: column;
+  }
+
+  .nav li {
+    margin: 0.5rem 0;
+  }
+}
