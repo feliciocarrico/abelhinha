@@ -43,10 +43,9 @@
       :root {
         --bg: #ffffff;
         --text: #1f2937; /* slate-800 */
-        --muted: #6b7280; /* gray-500 */
-        --brand: #111827; /* near-black for contrast with white logo */
-        --accent: #0ea5e9; /* sky-500 for CTAs */
-        --border: #e5e7eb; /* gray-200 */
+        --muted: #a3a3a3; /* neutral-400 */
+        --bg-dark: #0a0a0a;
+        --whatsapp: #25d366;
       }
       * {
         box-sizing: border-box;
@@ -55,511 +54,95 @@
       body {
         margin: 0;
         padding: 0;
-        background: var(--bg);
-        color: var(--text);
+        height: 100%;
+        background: var(--bg-dark);
+        color: var(--bg);
         font-family: "Inter", system-ui, Segoe UI, Roboto, Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
       }
-      img {
-        max-width: 100%;
-        display: block;
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 24px;
       }
-      a {
-        color: inherit;
-        text-decoration: none;
+      .content {
+        max-width: 500px;
       }
-      .container {
-        max-width: 1120px;
+      .logo {
+        max-width: 240px;
         margin: 0 auto;
-        padding: 0 24px;
+        border-radius: 16px;
       }
-      .btn {
+      h1 {
+        font-family: "Domine", serif;
+        font-size: 28px;
+        margin: 24px 0 8px;
+        line-height: 1.2;
+      }
+      .catchphrase {
+        color: var(--muted);
+        font-size: 18px;
+        margin: 0 0 32px;
+        line-height: 1.5;
+      }
+      .btn-whatsapp {
         display: inline-flex;
         align-items: center;
-        gap: 10px;
-        padding: 12px 18px;
-        border-radius: 10px;
-        font-weight: 600;
-        transition: 0.2s ease;
-        white-space: nowrap;
-      }
-      .btn-primary {
-        background: var(--accent);
+        gap: 12px;
+        background: var(--whatsapp);
         color: #fff;
-        border: 1px solid transparent;
+        padding: 14px 28px;
+        border-radius: 50px;
+        font-weight: 700;
+        text-decoration: none;
+        transition: transform 0.2s ease;
       }
-      .btn-primary:hover {
-        filter: brightness(0.95);
+      .btn-whatsapp:hover {
+        transform: scale(1.05);
       }
-      .btn-outline {
-        border: 1px solid var(--border);
-        color: var(--text);
-        background: #fff;
-      }
-      .btn-outline:hover {
-        border-color: #cfd4dc;
-      }
-
-      /* Header */
-      header {
-        position: sticky;
-        top: 0;
-        background: #fff;
-        border-bottom: 1px solid var(--border);
-        z-index: 50;
-      }
-      .nav {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        height: 72px;
-      }
-      .brand {
-        display: flex;
-        align-items: center;
-        gap: 14px;
-      }
-      .brand img {
-        height: 40px;
-        width: auto;
-      }
-      .brand .title {
-        font-family: "Domine", serif;
-        font-weight: 600;
-        letter-spacing: 0.2px;
-      }
-      .nav-links {
-        display: flex;
-        align-items: center;
-        gap: 24px;
-      }
-      .nav-links a {
-        color: var(--muted);
-        font-weight: 500;
-      }
-      .nav-links a:hover {
-        color: var(--text);
-      }
-
-      /* Hero */
-      .hero {
-        padding: 72px 0;
-      }
-      .hero-grid {
-        display: grid;
-        grid-template-columns: 1.1fr 0.9fr;
-        gap: 32px;
-      }
-      .hero h1 {
-        font-size: 38px;
-        line-height: 1.15;
-        margin: 0 0 16px;
-      }
-      .hero p {
-        color: var(--muted);
-        font-size: 18px;
-        margin: 0 0 24px;
-      }
-      .hero .badges {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-        margin: 18px 0 0;
-      }
-      .badge {
-        border: 1px solid var(--border);
-        border-radius: 999px;
-        padding: 8px 12px;
-        color: var(--muted);
-        font-weight: 600;
-        font-size: 13px;
-      }
-      .hero-card {
-        border: 1px solid var(--border);
-        border-radius: 16px;
-        padding: 20px;
-        background: #fff;
-      }
-      .hero-card h3 {
-        margin: 0 0 14px;
-        font-size: 18px;
-      }
-      .hero-card form {
-        display: grid;
-        gap: 12px;
-      }
-      .field {
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-      }
-      .field label {
-        font-size: 13px;
-        color: var(--muted);
-      }
-      .field input,
-      .field select,
-      .field textarea {
-        padding: 12px;
-        border: 1px solid var(--border);
-        border-radius: 10px;
-        font-size: 15px;
-      }
-      .field textarea {
-        min-height: 96px;
-        resize: vertical;
-      }
-
-      /* Sections */
-      section {
-        padding: 56px 0;
-        border-top: 1px solid var(--border);
-      }
-      .section-head {
-        display: flex;
-        justify-content: space-between;
-        align-items: end;
-        gap: 24px;
-        margin-bottom: 24px;
-      }
-      .section-head h2 {
-        font-size: 26px;
-        margin: 0;
-      }
-      .section-head p {
-        color: var(--muted);
-        max-width: 720px;
-        margin: 8px 0 0;
-      }
-      .cards {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 18px;
-      }
-      .card {
-        border: 1px solid var(--border);
-        border-radius: 14px;
-        padding: 18px;
-        background: #fff;
-      }
-      .card h3 {
-        margin: 0 0 8px;
-        font-size: 18px;
-      }
-      .card p {
-        color: var(--muted);
-        margin: 0;
-      }
-      .kpis {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 18px;
-        margin-top: 12px;
-      }
-      .kpi {
-        border: 1px solid var(--border);
-        border-radius: 14px;
-        padding: 16px;
-        text-align: center;
-      }
-      .kpi strong {
-        font-size: 22px;
-        display: block;
-        margin-bottom: 6px;
-      }
-
-      /* CTA */
-      .cta {
-        padding: 48px 0;
-        background: #f8fafc;
-        border-top: 1px solid var(--border);
-      }
-      .cta .wrap {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-between;
-        gap: 16px;
-      }
-      .cta h3 {
-        margin: 0;
-        font-size: 22px;
-      }
-      .cta p {
-        margin: 6px 0 0;
-        color: var(--muted);
-      }
-
-      /* Footer */
-      footer {
-        padding: 36px 0;
-        border-top: 1px solid var(--border);
-        color: var(--muted);
-      }
-      .foot {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-between;
-        gap: 12px;
-      }
-      .foot small {
-        font-size: 13px;
-      }
-
-      /* Responsive */
-      @media (max-width: 980px) {
-        .hero-grid {
-          grid-template-columns: 1fr;
-        }
-        .cards {
-          grid-template-columns: 1fr 1fr;
-        }
-        .kpis {
-          grid-template-columns: 1fr 1fr;
-        }
-        .nav {
-          height: auto;
-          gap: 14px;
-          padding: 14px 0;
-        }
-        .nav-links {
-          flex-wrap: wrap;
-        }
-      }
-      @media (max-width: 640px) {
-        .cards,
-        .kpis {
-          grid-template-columns: 1fr;
-        }
-        .hero h1 {
-          font-size: 32px;
-        }
+      .btn-whatsapp svg {
+        width: 24px;
+        height: 24px;
       }
     </style>
   </head>
   <body>
-    <!-- Header -->
-    <header>
-      <div class="container nav">
-        <div class="brand">
-          <!-- Substitua pelo caminho real do seu logo -->
-          <img
-            src="og-image.png"
-            alt="Logo Ipê Branco Consultoria Tributária"
-          />
-          <div class="title">Ipê Branco Consultoria Tributária</div>
-        </div>
-        <nav class="nav-links">
-          <a href="#sobre">Sobre</a>
-          <a href="#servicos">Serviços</a>
-          <a href="#contato">Contato</a>
-          <a href="#agendar" class="btn btn-outline">Agendar consulta</a>
-        </nav>
-      </div>
-    </header>
-
-    <!-- Hero -->
-    <section class="hero" id="inicio">
-      <div class="container hero-grid">
-        <div>
-          <h1>Pague menos impostos com segurança e inteligência jurídica.</h1>
-          <p>
-            Atendimento personalizado para empresas e pessoas físicas —
-            regularização, planejamento e redução de riscos tributários com
-            soluções 100% legais.
-          </p>
-          <div class="badges">
-            <span class="badge">Foco em resultados</span>
-            <span class="badge">Segurança jurídica</span>
-            <span class="badge">Comunicação direta</span>
-          </div>
-          <div
-            style="margin-top: 22px; display: flex; gap: 12px; flex-wrap: wrap"
-          >
-            <a href="#agendar" class="btn btn-primary">Agendar consulta</a>
-            <a href="#servicos" class="btn btn-outline">Ver serviços</a>
-          </div>
-        </div>
-
-        <!-- Form de agendamento rápido -->
-        <aside class="hero-card" id="agendar">
-          <h3>Agende sua consulta</h3>
-          <form action="#" method="post">
-            <div class="field">
-              <label for="nome">Nome</label>
-              <input
-                id="nome"
-                name="nome"
-                type="text"
-                placeholder="Seu nome completo"
-                required
-              />
-            </div>
-            <div class="field">
-              <label for="email">E-mail</label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                placeholder="seu@exemplo.com"
-                required
-              />
-            </div>
-            <div class="field">
-              <label for="telefone">Telefone / WhatsApp</label>
-              <input
-                id="telefone"
-                name="telefone"
-                type="tel"
-                placeholder="+55 (21) 9XXXX-XXXX"
-              />
-            </div>
-            <div class="field">
-              <label for="tipo">Sou</label>
-              <select id="tipo" name="tipo">
-                <option>Empresa</option>
-                <option>Pessoa Física</option>
-              </select>
-            </div>
-            <div class="field">
-              <label for="resumo">Resumo do caso (opcional)</label>
-              <textarea
-                id="resumo"
-                name="resumo"
-                placeholder="Descreva brevemente sua necessidade"
-              ></textarea>
-            </div>
-            <button class="btn btn-primary" type="submit">Quero agendar</button>
-          </form>
-        </aside>
-      </div>
-    </section>
-
-    <!-- Sobre -->
-    <section id="sobre">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <h2>Sobre</h2>
-            <p>
-              Consultoria tributária moderna, direta e acessível. Atuamos com
-              planejamento estratégico, regularização fiscal e consultoria
-              contínua, sempre orientados por resultados e pela segurança
-              jurídica.
-            </p>
-          </div>
-        </div>
-
-        <div class="kpis">
-          <div class="kpi">
-            <strong>+5 anos</strong>
-            <span>Atuação em direito tributário</span>
-          </div>
-          <div class="kpi">
-            <strong>Empresas & PF</strong>
-            <span>Atendimento híbrido e personalizado</span>
-          </div>
-          <div class="kpi">
-            <strong>Resultados</strong>
-            <span>Redução comprovada de custos</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Serviços -->
-    <section id="servicos">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <h2>Serviços</h2>
-            <p>
-              Estratégias legais para reduzir a carga tributária, prevenir
-              riscos e manter conformidade — sem juridiquês, com clareza e
-              objetividade.
-            </p>
-          </div>
-        </div>
-
-        <div class="cards">
-          <div class="card">
-            <h3>Planejamento Tributário Estratégico</h3>
-            <p>
-              Simulações, escolha de regimes, reorganizações e orientação
-              contábil para pagar menos com segurança.
-            </p>
-          </div>
-          <div class="card">
-            <h3>Regularização Fiscal</h3>
-            <p>
-              Avaliação de pendências, parcelamentos, defesas administrativas e
-              negociação com órgãos fiscais.
-            </p>
-          </div>
-          <div class="card">
-            <h3>Consultoria Contábil e Tributária</h3>
-            <p>
-              Assessoria contínua para operações, tributos diretos e indiretos,
-              e suporte a contadores.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contato -->
-    <section id="contato">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <h2>Contato</h2>
-            <p>
-              Fale conosco para dúvidas, propostas e parcerias. Atendemos online
-              e presencialmente (Rio de Janeiro).
-            </p>
-          </div>
-        </div>
-
-        <div class="cards">
-          <div class="card">
-            <h3>E-mail</h3>
-            <p>contato@ipebranco.com.br</p>
-          </div>
-          <div class="card">
-            <h3>WhatsApp</h3>
-            <p>+55 (21) 9XXXX-XXXX</p>
-          </div>
-          <div class="card">
-            <h3>Endereço</h3>
-            <p>Rio de Janeiro, RJ — Atendimento mediante agendamento.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA final -->
-    <div class="cta">
-      <div class="container wrap">
-        <div>
-          <h3>Pronto para pagar menos com segurança?</h3>
-          <p>Agende uma consulta e receba um plano inicial de ação.</p>
-        </div>
-        <div style="display: flex; gap: 10px">
-          <a href="#agendar" class="btn btn-primary">Agendar consulta</a>
-          <a href="#contato" class="btn btn-outline">Falar agora</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-      <div class="container foot">
-        <small
-          >© 2025 — Ipê Branco Consultoria Tributária. Conteúdo informativo —
-          orientações específicas exigem consulta jurídica.</small
+    <main class="content">
+      <img
+        src="og-image.png"
+        alt="Logo Ipê Branco"
+        class="logo"
+        width="1024"
+        height="1024"
+      />
+      <h1>Ipê Branco Consultoria Tributária</h1>
+      <p class="catchphrase">
+        Inteligência tributária para o seu negócio. Menos complexidade, mais
+        resultados.
+      </p>
+      <a href="#" id="whatsapp-link" class="btn-whatsapp">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
         >
-        <small>Privacidade • Termos</small>
-      </div>
-    </footer>
+          <path
+            d="M12.04 2C6.58 2 2.13 6.45 2.13 12C2.13 14.06 2.7 16.01 3.7 17.65L2.51 21.5L6.49 20.33C8.08 21.24 9.97 21.78 12.04 21.78C17.5 21.78 21.95 17.33 21.95 11.78C21.95 6.23 17.5 2 12.04 2M12.04 3.67C16.56 3.67 20.28 7.39 20.28 11.91C20.28 16.43 16.56 20.15 12.04 20.15C10.21 20.15 8.5 19.65 7.11 18.76L6.73 18.53L4.94 19.08L5.5 17.33L5.26 16.93C4.3 15.45 3.79 13.73 3.79 11.91C3.79 7.39 7.52 3.67 12.04 3.67M17.36 14.4C17.13 14.95 16.13 15.49 15.6 15.58C15.07 15.66 14.45 15.68 14.13 15.55C13.82 15.41 12.91 15.11 11.81 14.12C10.46 12.93 9.66 11.47 9.49 11.16C9.31 10.85 9.5 10.68 9.66 10.52C9.8 10.38 9.98 10.18 10.15 10C10.31 9.82 10.38 9.7 10.25 9.49C10.12 9.28 9.5 7.93 9.26 7.38C9.03 6.83 8.79 6.91 8.61 6.91C8.43 6.91 8.12 6.91 7.84 6.91C7.57 6.91 7.17 7.01 6.86 7.31C6.56 7.62 5.91 8.21 5.91 9.49C5.91 10.77 6.89 11.97 7.03 12.15C7.17 12.33 9.12 15.33 12.1 16.76C14.46 17.86 15.08 17.63 15.58 17.58C16.08 17.53 17.13 16.94 17.36 16.3C17.58 15.66 17.58 15.05 17.36 14.4Z"
+          />
+        </svg>
+        <span>Fale conosco no WhatsApp</span>
+      </a>
+    </main>
+
+    <script>
+      // Configure o link do WhatsApp
+      const phone = "5521999999999"; // <-- TROQUE PELO SEU NÚMERO (55 + DDD + NUMERO)
+      const message = "Olá! Gostaria de saber mais sobre a consultoria.";
+      const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+      document.getElementById("whatsapp-link").href = url;
+    </script>
   </body>
 </html>
