@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ipê Branco Consultoria Tributária</title>
+    <meta
+      name="description"
+      content="Consultoria tributária moderna, direta e acessível para empresas e pessoas físicas. Planejamento, regularização e redução de riscos — com segurança jurídica."
+    />
+
+    <!-- SEO básico -->
+    <link rel="canonical" href="https://feliciocarrico.github.io/abelhinha/" />
+    <meta name="robots" content="index,follow" />
+
+    <!-- Open Graph / Social -->
+    <meta property="og:title" content="Ipê Branco Consultoria Tributária" />
+    <meta
+      property="og:description"
+      content="Planejamento tributário, regularização fiscal e consultoria contínua com foco em resultados e segurança jurídica."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content="https://feliciocarrico.github.io/abelhinha/og-image.png"
+    />
+    <meta
+      property="og:url"
+      content="https://feliciocarrico.github.io/abelhinha/"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" href="og-image.png" type="image/png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Domine:wght@600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --bg: #ffffff;
+        --text: #1f2937; /* slate-800 */
+        --muted: #6b7280; /* gray-500 */
+        --brand: #111827; /* near-black for contrast with white logo */
+        --accent: #0ea5e9; /* sky-500 for CTAs */
+        --border: #e5e7eb; /* gray-200 */
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: "Inter", system-ui, Segoe UI, Roboto, Arial, sans-serif;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .container {
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 18px;
+        border-radius: 10px;
+        font-weight: 600;
+        transition: 0.2s ease;
+        white-space: nowrap;
+      }
+      .btn-primary {
+        background: var(--accent);
+        color: #fff;
+        border: 1px solid transparent;
+      }
+      .btn-primary:hover {
+        filter: brightness(0.95);
+      }
+      .btn-outline {
+        border: 1px solid var(--border);
+        color: var(--text);
+        background: #fff;
+      }
+      .btn-outline:hover {
+        border-color: #cfd4dc;
+      }
+
+      /* Header */
+      header {
+        position: sticky;
+        top: 0;
+        background: #fff;
+        border-bottom: 1px solid var(--border);
+        z-index: 50;
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 72px;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+      .brand img {
+        height: 40px;
+        width: auto;
+      }
+      .brand .title {
+        font-family: "Domine", serif;
+        font-weight: 600;
+        letter-spacing: 0.2px;
+      }
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+      }
+      .nav-links a {
+        color: var(--muted);
+        font-weight: 500;
+      }
+      .nav-links a:hover {
+        color: var(--text);
+      }
+
+      /* Hero */
+      .hero {
+        padding: 72px 0;
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 32px;
+      }
+      .hero h1 {
+        font-size: 38px;
+        line-height: 1.15;
+        margin: 0 0 16px;
+      }
+      .hero p {
+        color: var(--muted);
+        font-size: 18px;
+        margin: 0 0 24px;
+      }
+      .hero .badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin: 18px 0 0;
+      }
+      .badge {
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        padding: 8px 12px;
+        color: var(--muted);
+        font-weight: 600;
+        font-size: 13px;
+      }
+      .hero-card {
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 20px;
+        background: #fff;
+      }
+      .hero-card h3 {
+        margin: 0 0 14px;
+        font-size: 18px;
+      }
+      .hero-card form {
+        display: grid;
+        gap: 12px;
+      }
+      .field {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .field label {
+        font-size: 13px;
+        color: var(--muted);
+      }
+      .field input,
+      .field select,
+      .field textarea {
+        padding: 12px;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        font-size: 15px;
+      }
+      .field textarea {
+        min-height: 96px;
+        resize: vertical;
+      }
+
+      /* Sections */
+      section {
+        padding: 56px 0;
+        border-top: 1px solid var(--border);
+      }
+      .section-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        gap: 24px;
+        margin-bottom: 24px;
+      }
+      .section-head h2 {
+        font-size: 26px;
+        margin: 0;
+      }
+      .section-head p {
+        color: var(--muted);
+        max-width: 720px;
+        margin: 8px 0 0;
+      }
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+      .card {
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 18px;
+        background: #fff;
+      }
+      .card h3 {
+        margin: 0 0 8px;
+        font-size: 18px;
+      }
+      .card p {
+        color: var(--muted);
+        margin: 0;
+      }
+      .kpis {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+        margin-top: 12px;
+      }
+      .kpi {
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 16px;
+        text-align: center;
+      }
+      .kpi strong {
+        font-size: 22px;
+        display: block;
+        margin-bottom: 6px;
+      }
+
+      /* CTA */
+      .cta {
+        padding: 48px 0;
+        background: #f8fafc;
+        border-top: 1px solid var(--border);
+      }
+      .cta .wrap {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+      }
+      .cta h3 {
+        margin: 0;
+        font-size: 22px;
+      }
+      .cta p {
+        margin: 6px 0 0;
+        color: var(--muted);
+      }
+
+      /* Footer */
+      footer {
+        padding: 36px 0;
+        border-top: 1px solid var(--border);
+        color: var(--muted);
+      }
+      .foot {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
+      .foot small {
+        font-size: 13px;
+      }
+
+      /* Responsive */
+      @media (max-width: 980px) {
+        .hero-grid {
+          grid-template-columns: 1fr;
+        }
+        .cards {
+          grid-template-columns: 1fr 1fr;
+        }
+        .kpis {
+          grid-template-columns: 1fr 1fr;
+        }
+        .nav {
+          height: auto;
+          gap: 14px;
+          padding: 14px 0;
+        }
+        .nav-links {
+          flex-wrap: wrap;
+        }
+      }
+      @media (max-width: 640px) {
+        .cards,
+        .kpis {
+          grid-template-columns: 1fr;
+        }
+        .hero h1 {
+          font-size: 32px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container nav">
+        <div class="brand">
+          <!-- Substitua pelo caminho real do seu logo -->
+          <img
+            src="og-image.png"
+            alt="Logo Ipê Branco Consultoria Tributária"
+          />
+          <div class="title">Ipê Branco Consultoria Tributária</div>
+        </div>
+        <nav class="nav-links">
+          <a href="#sobre">Sobre</a>
+          <a href="#servicos">Serviços</a>
+          <a href="#contato">Contato</a>
+          <a href="#agendar" class="btn btn-outline">Agendar consulta</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div>
+          <h1>Pague menos impostos com segurança e inteligência jurídica.</h1>
+          <p>
+            Atendimento personalizado para empresas e pessoas físicas —
+            regularização, planejamento e redução de riscos tributários com
+            soluções 100% legais.
+          </p>
+          <div class="badges">
+            <span class="badge">Foco em resultados</span>
+            <span class="badge">Segurança jurídica</span>
+            <span class="badge">Comunicação direta</span>
+          </div>
+          <div
+            style="margin-top: 22px; display: flex; gap: 12px; flex-wrap: wrap"
+          >
+            <a href="#agendar" class="btn btn-primary">Agendar consulta</a>
+            <a href="#servicos" class="btn btn-outline">Ver serviços</a>
+          </div>
+        </div>
+
+        <!-- Form de agendamento rápido -->
+        <aside class="hero-card" id="agendar">
+          <h3>Agende sua consulta</h3>
+          <form action="#" method="post">
+            <div class="field">
+              <label for="nome">Nome</label>
+              <input
+                id="nome"
+                name="nome"
+                type="text"
+                placeholder="Seu nome completo"
+                required
+              />
+            </div>
+            <div class="field">
+              <label for="email">E-mail</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="seu@exemplo.com"
+                required
+              />
+            </div>
+            <div class="field">
+              <label for="telefone">Telefone / WhatsApp</label>
+              <input
+                id="telefone"
+                name="telefone"
+                type="tel"
+                placeholder="+55 (21) 9XXXX-XXXX"
+              />
+            </div>
+            <div class="field">
+              <label for="tipo">Sou</label>
+              <select id="tipo" name="tipo">
+                <option>Empresa</option>
+                <option>Pessoa Física</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="resumo">Resumo do caso (opcional)</label>
+              <textarea
+                id="resumo"
+                name="resumo"
+                placeholder="Descreva brevemente sua necessidade"
+              ></textarea>
+            </div>
+            <button class="btn btn-primary" type="submit">Quero agendar</button>
+          </form>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Sobre -->
+    <section id="sobre">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Sobre</h2>
+            <p>
+              Consultoria tributária moderna, direta e acessível. Atuamos com
+              planejamento estratégico, regularização fiscal e consultoria
+              contínua, sempre orientados por resultados e pela segurança
+              jurídica.
+            </p>
+          </div>
+        </div>
+
+        <div class="kpis">
+          <div class="kpi">
+            <strong>+5 anos</strong>
+            <span>Atuação em direito tributário</span>
+          </div>
+          <div class="kpi">
+            <strong>Empresas & PF</strong>
+            <span>Atendimento híbrido e personalizado</span>
+          </div>
+          <div class="kpi">
+            <strong>Resultados</strong>
+            <span>Redução comprovada de custos</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Serviços -->
+    <section id="servicos">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Serviços</h2>
+            <p>
+              Estratégias legais para reduzir a carga tributária, prevenir
+              riscos e manter conformidade — sem juridiquês, com clareza e
+              objetividade.
+            </p>
+          </div>
+        </div>
+
+        <div class="cards">
+          <div class="card">
+            <h3>Planejamento Tributário Estratégico</h3>
+            <p>
+              Simulações, escolha de regimes, reorganizações e orientação
+              contábil para pagar menos com segurança.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Regularização Fiscal</h3>
+            <p>
+              Avaliação de pendências, parcelamentos, defesas administrativas e
+              negociação com órgãos fiscais.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Consultoria Contábil e Tributária</h3>
+            <p>
+              Assessoria contínua para operações, tributos diretos e indiretos,
+              e suporte a contadores.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Contato</h2>
+            <p>
+              Fale conosco para dúvidas, propostas e parcerias. Atendemos online
+              e presencialmente (Rio de Janeiro).
+            </p>
+          </div>
+        </div>
+
+        <div class="cards">
+          <div class="card">
+            <h3>E-mail</h3>
+            <p>contato@ipebranco.com.br</p>
+          </div>
+          <div class="card">
+            <h3>WhatsApp</h3>
+            <p>+55 (21) 9XXXX-XXXX</p>
+          </div>
+          <div class="card">
+            <h3>Endereço</h3>
+            <p>Rio de Janeiro, RJ — Atendimento mediante agendamento.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA final -->
+    <div class="cta">
+      <div class="container wrap">
+        <div>
+          <h3>Pronto para pagar menos com segurança?</h3>
+          <p>Agende uma consulta e receba um plano inicial de ação.</p>
+        </div>
+        <div style="display: flex; gap: 10px">
+          <a href="#agendar" class="btn btn-primary">Agendar consulta</a>
+          <a href="#contato" class="btn btn-outline">Falar agora</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container foot">
+        <small
+          >© 2025 — Ipê Branco Consultoria Tributária. Conteúdo informativo —
+          orientações específicas exigem consulta jurídica.</small
+        >
+        <small>Privacidade • Termos</small>
+      </div>
+    </footer>
+  </body>
+</html>
