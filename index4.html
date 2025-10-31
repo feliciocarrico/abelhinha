@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>[Seu Nome] — Planejamento Tributário & Contábil</title>
+    <meta
+      name="description"
+      content="Advogado especializado em planejamento tributário e contábil. Agende consulta jurídica para regularização e otimização fiscal."
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Favicon (substitua pelo seu) -->
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+
+    <style>
+      :root {
+        --bg: #0f1724; /* fundo escuro */
+        --card: #0b1220;
+        --accent: #00c2a8; /* verde/azulado */
+        --accent-2: #7bd6c8; /* gradiente claro */
+        --muted: #9aa6b2;
+        --text: #e6eef2;
+        --glass: rgba(255, 255, 255, 0.04);
+        --maxw: 1100px;
+        --radius: 14px;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto,
+          "Helvetica Neue", Arial;
+        background: linear-gradient(180deg, #071026 0%, #071726 60%);
+        color: var(--text);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        line-height: 1.45;
+      }
+      a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+      .wrap {
+        max-width: var(--maxw);
+        margin: 0 auto;
+        padding: 36px 20px;
+      }
+
+      /* Header / Nav */
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 0;
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: linear-gradient(
+          180deg,
+          rgba(7, 17, 38, 0.6),
+          rgba(7, 17, 38, 0.15)
+        );
+        backdrop-filter: blur(6px);
+      }
+      .brand {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+      }
+      .logo {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, var(--accent), var(--accent-2));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        color: #022;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+      }
+      .brand h1 {
+        font-size: 16px;
+        margin: 0;
+      }
+      nav {
+        display: flex;
+        gap: 18px;
+        align-items: center;
+      }
+      nav a {
+        font-size: 14px;
+        color: var(--muted);
+      }
+      .btn {
+        background: var(--accent);
+        color: #012;
+        padding: 10px 14px;
+        border-radius: 10px;
+        font-weight: 700;
+        box-shadow: 0 8px 24px rgba(0, 194, 168, 0.12);
+      }
+
+      /* Hero */
+      .hero {
+        display: grid;
+        grid-template-columns: 1fr 420px;
+        gap: 28px;
+        align-items: center;
+        padding: 48px 0;
+      }
+      .hero-left h2 {
+        font-size: 32px;
+        margin: 0 0 12px 0;
+        line-height: 1.06;
+      }
+      .hero-left p {
+        color: var(--muted);
+        margin: 0 0 22px 0;
+      }
+      .kpis {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-top: 10px;
+      }
+      .kpi {
+        background: var(--glass);
+        padding: 12px;
+        border-radius: 12px;
+        color: var(--muted);
+        font-weight: 600;
+        font-size: 14px;
+      }
+
+      /* card agendamento */
+      .card {
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.02),
+          rgba(255, 255, 255, 0.01)
+        );
+        padding: 18px;
+        border-radius: 16px;
+        box-shadow: 0 6px 24px rgba(2, 6, 23, 0.6);
+      }
+      .card h3 {
+        margin: 0 0 8px 0;
+      }
+      .form .field {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+      }
+      .form label {
+        font-size: 13px;
+        color: var(--muted);
+        margin-bottom: 6px;
+      }
+      .form input,
+      .form textarea,
+      .form select {
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.04);
+        background: transparent;
+        color: var(--text);
+        outline: none;
+      }
+      .form button {
+        width: 100%;
+        padding: 12px;
+        border-radius: 10px;
+        border: none;
+        background: linear-gradient(90deg, var(--accent), var(--accent-2));
+        color: #012;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      /* services */
+      .services {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+        margin: 34px 0;
+      }
+      .service {
+        background: rgba(255, 255, 255, 0.02);
+        padding: 18px;
+        border-radius: 12px;
+      }
+      .service h4 {
+        margin: 6px 0;
+        color: var(--text);
+      }
+      .service p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      /* proof */
+      .proof {
+        display: flex;
+        gap: 18px;
+        align-items: center;
+        margin: 26px 0;
+      }
+      .proof .badge {
+        background: rgba(255, 255, 255, 0.03);
+        padding: 12px;
+        border-radius: 12px;
+      }
+
+      /* CTA stripe */
+      .stripe {
+        margin: 26px 0;
+        padding: 22px;
+        border-radius: 12px;
+        background: linear-gradient(
+          90deg,
+          rgba(0, 194, 168, 0.08),
+          rgba(123, 214, 200, 0.04)
+        );
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .stripe h3 {
+        margin: 0;
+      }
+      .stripe .cta {
+        display: flex;
+        gap: 12px;
+      }
+
+      footer {
+        padding: 24px 0;
+        color: var(--muted);
+        font-size: 14px;
+        text-align: center;
+        margin-top: 36px;
+      }
+
+      /* responsive */
+      @media (max-width: 980px) {
+        .hero {
+          grid-template-columns: 1fr;
+          gap: 18px;
+        }
+        .services {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (max-width: 600px) {
+        .services {
+          grid-template-columns: 1fr;
+        }
+        header {
+          padding: 12px 10px;
+        }
+        .brand h1 {
+          font-size: 14px;
+        }
+      }
+
+      /* small utilities */
+      .muted {
+        color: var(--muted);
+      }
+      .pill {
+        display: inline-block;
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.03);
+        font-weight: 600;
+      }
+
+      /* nice code for svg decorative */
+      .illustration {
+        max-width: 100%;
+        height: auto;
+        border-radius: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div
+        class="wrap"
+        style="display: flex; align-items: center; gap: 16px; padding: 0"
+      >
+        <div class="brand">
+          <div class="logo" aria-hidden="true">PT</div>
+          <div>
+            <h1>
+              [Seu Nome]
+              <span style="font-size: 12px; color: var(--muted); display: block"
+                >Advogado • Planejamento Tributário</span
+              >
+            </h1>
+          </div>
+        </div>
+
+        <nav style="margin-left: auto">
+          <a href="#sobre">Sobre</a>
+          <a href="#servicos">Serviços</a>
+          <a href="#contato">Contato</a>
+          <a class="btn" href="#agendar">Agendar</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <!-- HERO -->
+      <section class="hero" id="top">
+        <div class="hero-left">
+          <h2>Pague menos impostos com segurança e inteligência jurídica.</h2>
+          <p class="muted">
+            Atendimento personalizado para empresas e pessoas físicas —
+            regularização, planejamento e redução de riscos tributários com
+            soluções 100% legais.
+          </p>
+
+          <div class="kpis">
+            <div class="kpi">✅ Foco em resultados práticos</div>
+            <div class="kpi">⚖️ Segurança jurídica</div>
+            <div class="kpi">📈 Estratégias que reduzem custos</div>
+          </div>
+
+          <div
+            style="margin-top: 20px; display: flex; gap: 12px; flex-wrap: wrap"
+          >
+            <a class="btn" href="#agendar">Agende sua consulta</a>
+            <a
+              style="
+                padding: 10px 12px;
+                border-radius: 10px;
+                background: transparent;
+                border: 1px solid rgba(255, 255, 255, 0.04);
+                color: var(--muted);
+              "
+              href="#servicos"
+              >Ver serviços</a
+            >
+          </div>
+        </div>
+
+        <aside>
+          <div class="card" id="agendar" aria-labelledby="book">
+            <h3 id="book">Agende sua consulta jurídica</h3>
+            <p class="muted" style="margin-bottom: 12px">
+              Consulta inicial com análise do seu caso e proposta de
+              planejamento. (Online ou presencial)
+            </p>
+
+            <form
+              class="form"
+              id="bookForm"
+              onsubmit="return handleSubmit(event)"
+            >
+              <div class="field">
+                <label for="nome">Nome</label>
+                <input id="nome" required placeholder="Seu nome completo" />
+              </div>
+              <div class="field">
+                <label for="email">E-mail</label>
+                <input id="email" type="email" placeholder="seu@exemplo.com" />
+              </div>
+              <div class="field">
+                <label for="tel">Telefone / WhatsApp</label>
+                <input id="tel" required placeholder="+55 (51) 9xxxx-xxxx" />
+              </div>
+              <div class="field">
+                <label for="tipo">Sou</label>
+                <select id="tipo">
+                  <option>Empresa</option>
+                  <option>Pessoa Física</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="msg">Resumo do caso (opcional)</label>
+                <textarea
+                  id="msg"
+                  rows="3"
+                  placeholder="Descreva brevemente sua necessidade"
+                ></textarea>
+              </div>
+
+              <button type="submit">Quero agendar — Falar por WhatsApp</button>
+            </form>
+
+            <div style="margin-top: 12px; font-size: 13px; color: var(--muted)">
+              <strong>Atendimento:</strong> Online / Presencial — Aceitamos
+              reuniões por vídeo.
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <!-- Sobre -->
+      <section id="sobre" style="margin-top: 26px">
+        <div
+          style="
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            flex-wrap: wrap;
+          "
+        >
+          <div style="flex: 1; min-width: 260px">
+            <h3>Sobre</h3>
+            <p class="muted">
+              Sou advogado especializado em planejamento tributário e contábil,
+              com foco em entregar soluções legais que reduzem a carga
+              tributária e previnem riscos fiscais. Trabalho com empresas de
+              pequeno e médio porte e pessoas físicas que precisam de
+              regularização ou otimização fiscal.
+            </p>
+
+            <ul style="margin-top: 12px; color: var(--muted)">
+              <li>Atuação prática e orientada a resultados</li>
+              <li>Redução de custos tributários legalmente</li>
+              <li>Regularização fiscal e defesa administrativa</li>
+            </ul>
+          </div>
+
+          <div style="width: 320px">
+            <!-- simple SVG decorative illustration -->
+            <svg
+              class="illustration"
+              viewBox="0 0 800 520"
+              xmlns="http://www.w3.org/2000/svg"
+              role="img"
+              aria-label="Ilustração de planejamento tributário"
+            >
+              <defs>
+                <linearGradient id="g1" x1="0" x2="1">
+                  <stop offset="0" stop-color="#00c2a8" />
+                  <stop offset="1" stop-color="#7bd6c8" />
+                </linearGradient>
+              </defs>
+              <rect
+                x="0"
+                y="0"
+                width="800"
+                height="520"
+                rx="20"
+                fill="#071326"
+              />
+              <g
+                transform="translate(80,60)"
+                fill="none"
+                stroke="url(#g1)"
+                stroke-width="4"
+              >
+                <rect
+                  x="8"
+                  y="8"
+                  width="480"
+                  height="300"
+                  rx="18"
+                  stroke-opacity="0.12"
+                />
+                <path
+                  d="M30 260 L180 170 L320 210 L430 120"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </g>
+              <g fill="#0b1220" transform="translate(540,80)">
+                <rect width="190" height="120" rx="12" fill="#081824" />
+                <text
+                  x="20"
+                  y="40"
+                  fill="#7bd6c8"
+                  font-size="20"
+                  font-weight="700"
+                >
+                  Planejar
+                </text>
+                <text x="20" y="70" fill="#9aa6b2" font-size="14">
+                  Regularizar • Otimizar
+                </text>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- serviços -->
+      <section id="servicos">
+        <h3 style="margin-top: 28px">Serviços</h3>
+        <div class="services" aria-label="Lista de serviços">
+          <div class="service">
+            <div class="pill">Planejamento</div>
+            <h4>Planejamento Tributário Estratégico</h4>
+            <p>
+              Estratégias legais para reduzir a carga tributária (simulações,
+              regimes, reorganizações e orientações contábeis).
+            </p>
+          </div>
+          <div class="service">
+            <div class="pill">Regularização</div>
+            <h4>Regularização Fiscal</h4>
+            <p>
+              Avaliação de pendências, parcelamentos, defesas administrativas e
+              negociação com órgãos fiscais.
+            </p>
+          </div>
+          <div class="service">
+            <div class="pill">Consultoria</div>
+            <h4>Consultoria Contábil e Tributária</h4>
+            <p>
+              Assessoria contínua para operações, planejamento de tributos
+              diretos e indiretos e suporte a contadores.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- provas -->
+      <section class="proof">
+        <div class="badge">
+          <strong>+5 anos</strong>
+          <div class="muted">de atuação em direito tributário</div>
+        </div>
+        <div class="badge">
+          <strong>Empresas & Pessoas</strong>
+          <div class="muted">Atuação em casos corporativos e PF</div>
+        </div>
+        <div class="badge">
+          <strong>Resultados</strong>
+          <div class="muted">Redução média de custos — casos exemplares</div>
+        </div>
+      </section>
+
+      <!-- CTA stripe -->
+      <section class="stripe">
+        <div>
+          <h3>Pronto para pagar menos com segurança?</h3>
+          <div class="muted">
+            Agende uma consulta jurídica e receba um plano inicial de ação.
+          </div>
+        </div>
+        <div class="cta">
+          <a class="btn" href="#agendar">Agendar Consulta</a>
+          <a
+            style="
+              padding: 10px 12px;
+              border-radius: 10px;
+              background: transparent;
+              border: 1px solid rgba(255, 255, 255, 0.06);
+              color: var(--muted);
+            "
+            href="https://wa.me/5591999999999"
+            id="whatsBtn"
+            >Falar por WhatsApp</a
+          >
+        </div>
+      </section>
+
+      <!-- contato/rodape -->
+      <footer id="contato">
+        <div style="margin-bottom: 8px">
+          © <span id="ano"></span> — [Seu Nome] • Advogado Especializado em
+          Planejamento Tributário e Contábil
+        </div>
+        <div class="muted">
+          Conteúdo informativo. A consulta jurídica personalizada é necessária
+          para orientações específicas.
+        </div>
+        <div style="margin-top: 12px">
+          Se desejar um projeto profissional:
+          <strong>Digitalis Marketing</strong> — Rodrigo:
+          <a href="tel:+5551995432515">(+55) 51 99543-2515</a> —
+          <a href="https://sites.digitalismarketing.com.br" target="_blank"
+            >sites.digitalismarketing.com.br</a
+          >
+        </div>
+      </footer>
+    </main>
+
+    <script>
+      // preencher ano automaticamente
+      document.getElementById("ano").textContent = new Date().getFullYear();
+
+      // botao WhatsApp: substitua o número do link pelo seu número real em formato internacional (55 + DDD + number)
+      document.getElementById("whatsBtn").href =
+        "https://wa.me/55YOURNUMBERHERE";
+
+      // tratar submissão do formulário: abre WhatsApp com mensagem formatada
+      function handleSubmit(e) {
+        e.preventDefault();
+        const nome = document.getElementById("nome").value.trim();
+        const tel = document.getElementById("tel").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const tipo = document.getElementById("tipo").value;
+        const msg = document.getElementById("msg").value.trim();
+
+        const phone = "55YOURNUMBERHERE"; // <-- Troque para seu número sem sinais, ex: 5511999999999
+        const text = `Olá,%20meu%20nome%20é%20${encodeURIComponent(
+          nome
+        )}.%20Sou%20${encodeURIComponent(
+          tipo
+        )}.%20Gostaria%20de%20agendar%20uma%20consulta.%0A%0ATelefone:%20${encodeURIComponent(
+          tel
+        )}%0AEmail:%20${encodeURIComponent(
+          email
+        )}%0A%0ADetalhes:%20${encodeURIComponent(msg)}`;
+
+        const url = `https://wa.me/${phone}?text=${text}`;
+        window.open(url, "_blank");
+        return false;
+      }
+    </script>
+  </body>
+</html>
